@@ -15,7 +15,7 @@ class App extends Component {
           draw. Once completed all the images will go head-to-head with one
           champion emerging.
         </p>
-        <img src="https://picsum.photos/300/300" alt="Random"></img>
+        <img src="https://picsum.photos/300/300" alt="Random" />
         <h5>Developers</h5>
         <ul>
           <li>Terrence Kuiper</li>
