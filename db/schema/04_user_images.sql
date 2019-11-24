@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS user_images
+CASCADE;
+
+CREATE TABLE user_images
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  user_image_url VARCHAR(255),
+  room_id INTEGER REFERENCES rooms(id) ON DELETE CASCADE,
+  image_status VARCHAR(255)
+);

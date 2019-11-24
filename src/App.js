@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <img src="https://picsum.photos/100" alt="Random" />
+          <h2>Welcome to Art Arena</h2>
         </div>
+        <h3>Challenge your friends to an epic battle of art.</h3>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Each user is presented with the same random image that they all must
+          draw. Once completed all the images will go head-to-head with one
+          champion emerging.
         </p>
+        <img src="https://picsum.photos/300/300" alt="Random"></img>
+        <h5>Developers</h5>
+        <ul>
+          <li>Terrence Kuiper</li>
+
+          <li>Justin Stewart</li>
+        </ul>
       </div>
     );
   }
