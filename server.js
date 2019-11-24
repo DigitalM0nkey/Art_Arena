@@ -3,8 +3,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 
-require("dotenv").config();
-
 app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/ping", function(req, res) {
@@ -50,11 +48,11 @@ AWS.config.update({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
 
-var s3 = new AWS.S3();
-var filePath = "./data/file.txt";
+let s3 = new AWS.S3();
+let filePath = "./data/file.txt";
 
 //configuring parameters
-var params = {
+let params = {
   Bucket: process.env.AWS_BUCKET_NAME,
   Body: fs.createReadStream(filePath),
   Key: "folder/" + Date.now() + "_" + path.basename(filePath)
