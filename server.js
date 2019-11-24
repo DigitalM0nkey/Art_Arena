@@ -43,7 +43,6 @@ client.query(
 
 const AWS = require("aws-sdk");
 const fs = require("fs");
-const path = require("path");
 
 //configuring the AWS environment
 AWS.config.update({
