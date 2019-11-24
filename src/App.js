@@ -6,9 +6,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src="https://picsum.photos/100" alt="Random" />
+          <i class="App-logo logo fad fa-paint-brush"></i>
+          <div class="left"></div>
+          {/* <img src="https://picsum.photos/100" alt="Random" /> */}
           <h2>Welcome to Art Arena</h2>
         </div>
+        <br></br>
         <h3>Challenge your friends to an epic battle of art.</h3>
         <p className="App-intro">
           Each user is presented with the same random image that they all must
@@ -22,6 +25,10 @@ class App extends Component {
 
           <li>Justin Stewart</li>
         </ul>
+        <div>
+          <br></br>
+          This project is <b>3</b> days old! Be sure to come back tomorrow.
+        </div>
       </div>
     );
   }
