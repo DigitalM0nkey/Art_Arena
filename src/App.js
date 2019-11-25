@@ -18,7 +18,7 @@ class App extends Component {
           draw. Once completed all the images will go head-to-head with one
           champion emerging.
         </p>
-        <img src="https://picsum.photos/300/300" alt="Random" />
+        <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" />
         <h5>Developers</h5>
         <ul>
           <li>Terrence Kuiper</li>
@@ -27,7 +27,7 @@ class App extends Component {
         </ul>
         <div>
           <br></br>
-          This project is <b>3</b> days old! Be sure to come back tomorrow.
+          This project is <b>5</b> days old! Be sure to come back tomorrow.
         </div>
       </div>
     );
