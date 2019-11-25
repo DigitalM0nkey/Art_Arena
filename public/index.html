@@ -31,5 +31,30 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBvk7VDIXQXGMdXsPmfmv-YknjmjPwXOKg",
+        authDomain: "artarena-fb540.firebaseapp.com",
+        databaseURL: "https://artarena-fb540.firebaseio.com",
+        projectId: "artarena-fb540",
+        storageBucket: "artarena-fb540.appspot.com",
+        messagingSenderId: "345973969923",
+        appId: "1:345973969923:web:849e8f42bb0876ae38aa36",
+        measurementId: "G-JHB3M69W1H"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
   </body>
 </html>

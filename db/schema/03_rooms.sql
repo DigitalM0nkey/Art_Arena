@@ -13,5 +13,9 @@ CREATE TABLE rooms
   photo_id INTEGER REFERENCES photos
   (id) ON
   DELETE CASCADE,
+  host_id INTEGER
+  REFERENCES users
+  (id) ON
+  DELETE CASCADE,
   timestamp TIMESTAMP
   );
