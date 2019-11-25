@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.scss";
+import "../imageSelector.js"
+import Header from "./header.js"
 
 class App extends Component {
   render() {
@@ -10,6 +12,7 @@ class App extends Component {
           <div class="left"></div>
           {/* <img src="https://picsum.photos/100" alt="Random" /> */}
           <h2>Welcome to Art Arena</h2>
+          <Header className="header"></Header>
         </div>
         <br></br>
         <h3>Challenge your friends to an epic battle of art.</h3>
