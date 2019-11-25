@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CreateHeader() {
+export default function CreateArena() {
   const classes = useStyles();
 
   return (
