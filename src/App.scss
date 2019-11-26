@@ -1,3 +1,7 @@
+html {
+  background-color: #E9BD8A;
+}
+
 .App {
   text-align: center;
 }
@@ -7,8 +11,8 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
+.app-header {
+  background-color: #9A62B9 !important;
   height: 150px;
   padding: 20px;
   color: white;
@@ -70,7 +74,7 @@
   left: 0;
   width: 100%;
   height: 15px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #E9BD8A !important;
   animation: line 55s linear infinite;
 }
 .left:after {
@@ -98,4 +102,54 @@
   100% {
     left: 100;
   }
+}
+
+// Lobby
+
+.lobby_main_div, .arena_name_div, .button_div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+// Status
+
+.status_main_div, .player_status_div, .button_div, .gallery {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+// Vote
+
+.vote_main_div, .vote_message, .button_div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+
+  .option_one, .option_two {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Winner
+
+.winner_message {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.winner_gallery {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+  // flex-direction: column;
 }

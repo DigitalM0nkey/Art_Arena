@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import "./App.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +21,7 @@ export default function CreateHeader(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} app-header>
       <Grid
         container
         direction="row"
@@ -28,22 +29,14 @@ export default function CreateHeader(props) {
         alignItems="center"
         spacing={4}
       >
-        <Grid
-          item
-          xs={3}
-          // container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-        >
-          {/* <Router> */}
+        <Grid item xs={3}>
           <Link to="/Homepage">
             <Paper className={classes.paper}>
               <i className="App-logo logo fad fa-paint-brush"></i>
+              <br></br>
               Art Arena
             </Paper>
           </Link>
-          {/* </Router> */}
         </Grid>
         <Grid item xs={2}>
           <Paper className={classes.paper}>Room Name</Paper>

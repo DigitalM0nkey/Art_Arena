@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
-// import "../imageSelector.js"
 import Header from "./header.js";
 import Homepage from "./homepage";
-import Arena from "./arena.js";
 import Button from "@material-ui/core/Button";
-
+import Lobby from "./lobby.js";
+import Drawspace from "./drawspace";
+import Status from "./status.js";
+import Vote from "./vote.js";
+import Winner from "./winner.js";
 import firebase, { auth, provider, config } from "./firebase";
-
-console.log("FIREBASE =>", firebase);
-console.log(process.env);
 
 class App extends Component {
   constructor(props) {
@@ -58,25 +57,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          {/* <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-            </ul> */}
-          {/* <hr /> */}
           <Switch>
             <Route exact path="/">
               <div className="App">
                 <div className="App-header">
                   <Header info={userInfo} authButton={authButton} />
-                  {/* <img src="https://picsum.photos/100" alt="Random" /> */}
                 </div>
                 <br></br>
-                <div class="left"></div>
+                <div class="animation"></div>
                 <h3>Challenge your friends to an epic battle of art.</h3>
                 <p className="App-intro">
                   Each user is presented with the same random image that they
@@ -93,7 +81,7 @@ class App extends Component {
                   size="large"
                   variant="outlined"
                   color="secondary"
-                  href="/Arena"
+                  href="/Arena/Lobby"
                 >
                   go to arena
                 </Button>
@@ -103,7 +91,6 @@ class App extends Component {
                   <li>Justin Stewart</li>
                 </ul>
                 <div>
-                  <div></div>
                   <br></br>
                   This project is <b>6</b> days old! Be sure to come back
                   tomorrow.
@@ -113,12 +100,22 @@ class App extends Component {
             <Route path="/Homepage">
               <Homepage></Homepage>
             </Route>
-            <Route path="/Arena">
-              <Arena></Arena>
+            <Route path="/Arena/Lobby">
+              <Lobby></Lobby>
             </Route>
-            <Route path="/dashboard">{/* <Dashboard /> */}</Route>
+            <Route path="/Arena/Drawspace">
+              <Drawspace></Drawspace>
+            </Route>
+            <Route path="/Arena/Status">
+              <Status></Status>
+            </Route>
+            <Route path="/Arena/Vote">
+              <Vote></Vote>
+            </Route>
+            <Route path="/Arena/Winner">
+              <Winner></Winner>
+            </Route>
           </Switch>
-          {/* </div> */}
         </Router>
       </div>
     );
