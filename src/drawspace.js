@@ -31,8 +31,8 @@ export default function CreateDrawspace() {
       <Header></Header>
       <div>
         <RandomImage
-          y={500}
-          x={500}
+          y={360}
+          x={640}
         ></RandomImage>
       </div>
       <div id="paint-app">

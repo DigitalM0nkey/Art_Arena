@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(3, 2)
   },
 }));
 
@@ -27,7 +27,7 @@ export default function CreateLobby() {
         <Header></Header>
       </div>
       <div className="arena_name_div">
-      <Paper className={classes.root}>
+        <Paper className={classes.root}>
           <Typography variant="h5" component="h3">
             Arena Name
           </Typography>

@@ -10,36 +10,39 @@ import {
 } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Header from "./header.js"
+import Typography from '@material-ui/core/Typography';
+import RandomImage from "./imageSelector.js"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
+    padding: theme.spacing(3, 2)
   },
 }));
 
-export default function CreateWinner() {
+export default function CreateVote() {
   const classes = useStyles();
 
   return (
     <div>
-      <Header></Header>
-      <Grid
-        container direction="row"
-        justify="space-evenly"
-        alignItems="center"
-        spacing={4}
-      >
       <div>
-        <Button variant="contained" color="primary" href="/">
-          Return to main menu
-        </Button>
+        <Header></Header>
       </div>
-    </Grid>
+      <div className="winner_message">
+        <Paper className={classes.root}>
+          <Typography variant="h5" component="h3">
+            Congratulations "Player Name"!
+          </Typography>
+        </Paper>
+      </div>
+      <div className="winner_gallery">
+        <RandomImage x={200} y={200}></RandomImage>
+        <RandomImage x={200} y={200}></RandomImage>
+      </div>
+      <div className="button_div">
+          <Button variant="contained" color="primary" href="/">
+            Return to Main Menu
+          </Button>
+      </div>
     </div>
   );
 }

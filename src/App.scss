@@ -102,20 +102,50 @@ html {
 
 // Lobby
 
-.lobby_main_div {
+.lobby_main_div, .arena_name_div, .button_div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+// Status
+
+.status_main_div, .player_status_div, .button_div, .gallery {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+// Vote
+
+.vote_main_div, .vote_message, .button_div {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+
+  .option_one, .option_two {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Winner
+
+.winner_message {
   display: flex;
   justify-content: space-evenly;
   padding-top: 50px;
 }
 
-.arena_name_div {
+.winner_gallery {
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 50px;
-}
-
-.button_div {
-  display: flex;
-  justify-content: space-evenly;
-  padding-top: 50px;
+  justify-content: center;
+  padding-top: 15px;
+  // flex-direction: column;
 }

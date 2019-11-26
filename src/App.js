@@ -35,7 +35,7 @@ class App extends Component {
                     draw. Once completed all the images will go head-to-head with one
                     champion emerging.
                   </p>
-                  <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" />
+                  {/* <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" /> */}
                   <Button size="large" variant="outlined" color="secondary" href="/Arena/Lobby">
                     go to arena
                   </Button>
