@@ -32,21 +32,13 @@ export default function CreateHeader() {
         alignItems="center"
         spacing={4}
       >
-        <Grid
-          item xs={3}
-          // container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-        >
-          {/* <Router> */}
-            <Link to="/Homepage">
-              <Paper className={classes.paper}>
-                <i className="App-logo logo fad fa-paint-brush"></i>
-                Art Arena
-              </Paper>
-            </Link>
-          {/* </Router> */}
+        <Grid item xs={3}>
+          <Link to="/Homepage">
+            <Paper className={classes.paper}>
+              <i className="App-logo logo fad fa-paint-brush"></i>
+              Art Arena
+            </Paper>
+          </Link>
         </Grid>
         <Grid item xs={2}>
           <Paper className={classes.paper}>Room Name</Paper>

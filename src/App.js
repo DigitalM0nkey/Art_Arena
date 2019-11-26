@@ -9,24 +9,18 @@ import "./App.scss";
 // import "../imageSelector.js"
 import Header from "./header.js"
 import Homepage from "./homepage"
-import Arena from "./arena.js"
+import Lobby from "./lobby.js"
 import Button from '@material-ui/core/Button';
+import Drawspace from "./drawspace"
+import Status from "./status.js"
+import Vote from "./vote.js"
+import Winner from "./winner.js"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Router>
-          {/* <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
-            </ul> */}
-            {/* <hr /> */}
             <Switch>
               <Route exact path="/">
                 <div className="App">
@@ -43,7 +37,7 @@ class App extends Component {
                     champion emerging.
                   </p>
                   <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" />
-                  <Button size="large" variant="outlined" color="secondary" href="/Arena">
+                  <Button size="large" variant="outlined" color="secondary" href="/Arena/Lobby">
                     go to arena
                   </Button>
                   <h5>Developers</h5>
@@ -60,14 +54,22 @@ class App extends Component {
               <Route path="/Homepage">
                 <Homepage></Homepage>
               </Route>
-              <Route path="/Arena">
-                <Arena></Arena>
+              <Route path="/Arena/Lobby">
+                <Lobby></Lobby>
               </Route>
-              <Route path="/dashboard">
-                {/* <Dashboard /> */}
+              <Route path="/Arena/Drawspace">
+                <Drawspace></Drawspace>
+              </Route>
+              <Route path="/Arena/Status">
+                <Status></Status>
+              </Route>
+              <Route path="/Arena/Vote">
+                <Vote></Vote>
+              </Route>
+              <Route path="/Arena/Winner">
+                <Winner></Winner>
               </Route>
             </Switch>
-          {/* </div> */}
         </Router>
       </div>
     );
