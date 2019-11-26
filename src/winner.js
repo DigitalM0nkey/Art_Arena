@@ -35,9 +35,9 @@ export default function CreateWinner() {
         spacing={4}
       >
       <div>
-          <Button variant="contained" color="primary" href="/">
-            Return to main menu
-          </Button>
+        <Button variant="contained" color="primary" href="/">
+          Return to main menu
+        </Button>
       </div>
     </Grid>
     </div>

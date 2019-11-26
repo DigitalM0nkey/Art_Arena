@@ -9,6 +9,8 @@ import {
   Link
 } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import "./App.scss";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,7 +27,7 @@ export default function CreateHeader() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} app-header>
       <Grid 
         container direction="row"
         justify="space-evenly"

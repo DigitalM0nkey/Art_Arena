@@ -35,9 +35,11 @@ export default function CreateStatus() {
         spacing={4}
       >
       <div>
-          <Button variant="contained" color="primary" href="/Arena/Vote">
+      <Link to="/Arena/Vote">
+          <Button variant="contained" color="primary">
             Go Vote
           </Button>
+        </Link>
       </div>
     </Grid>
     </div>

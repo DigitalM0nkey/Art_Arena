@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Header from "./header.js"
+import RandomImage from "./imageSelector.js"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,9 +29,21 @@ export default function CreateDrawspace() {
   return (
     <div>
       <Header></Header>
-      <Button variant="contained" color="primary" href="/Arena/Status">
-        Submit
-      </Button>
+      <div>
+        <RandomImage
+          y={500}
+          x={500}
+        ></RandomImage>
+      </div>
+      <div id="paint-app">
+        <footer>
+          <Link to="/Arena/Status">
+            <Button variant="contained" color="primary">
+              Submit
+            </Button>
+          </Link>
+        </footer>
+      </div>
     </div>
   );
 }

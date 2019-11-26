@@ -35,9 +35,11 @@ export default function CreateVote() {
         spacing={4}
       >
       <div>
-          <Button variant="contained" color="primary" href="/Arena/Winner">
-            See the Winner
+      <Link to="/Arena/Winner">
+          <Button variant="contained" color="primary">
+            View Winner
           </Button>
+        </Link>
       </div>
     </Grid>
     </div>

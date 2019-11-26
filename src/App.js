@@ -26,10 +26,9 @@ class App extends Component {
                 <div className="App">
                   <div className="App-header">
                     <Header />
-                    {/* <img src="https://picsum.photos/100" alt="Random" /> */}
                   </div>
                   <br></br>
-                  {/* <div class="left"></div> */}
+                  <div class="left"></div>
                   <h3>Challenge your friends to an epic battle of art.</h3>
                   <p className="App-intro">
                     Each user is presented with the same random image that they all must
