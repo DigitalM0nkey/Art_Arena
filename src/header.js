@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CreateHeader() {
+export default function CreateHeader(props) {
   const classes = useStyles();
 
   return (
@@ -57,7 +57,10 @@ export default function CreateHeader() {
           </Button>
         </Grid>
         <Grid item xs={2}>
-          <Paper className={classes.paper}>Sign In</Paper>
+          <div>
+            {props.userInfo}
+            {props.authButton}
+          </div>
         </Grid>
       </Grid>
     </div>

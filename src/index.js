@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Auth from "./auth";
 import "./index.scss";
 //import * as firebase from "firebase";
 

@@ -7,65 +7,54 @@ import Homepage from "./homepage";
 import Arena from "./arena.js";
 import Button from "@material-ui/core/Button";
 
-import firebase from "firebase";
-import * as firebaseui from "firebaseui";
+import firebase, { auth, provider, config } from "./firebase";
 
 console.log("FIREBASE =>", firebase);
 console.log(process.env);
 
-// <!-- // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSANGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
-const ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-const uiConfig = {
-  callbacks: {
-    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-      // User successfully signed in.
-      // Return type determines whether we continue the redirect automatically
-      // or whether we leave that to developer to handle.
-      return true;
-    },
-    uiShown: function() {
-      // The widget is rendered.
-      // Hide the loader.
-      document.getElementById("firebaseui-auth-container").style.display =
-        "none";
-    }
-  },
-  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-  signInFlow: "popup",
-  signInSuccessUrl: "/Homepage",
-  signInOptions: [
-    {
-      provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
-    },
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID
-  ],
-  // Terms of service url.
-  tosUrl: "<your-tos-url>",
-  // Privacy policy url.
-  privacyPolicyUrl: "<your-privacy-policy-url>"
-};
-
-ui.start("#firebaseui-auth-container", uiConfig);
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    };
+    this.login = () => {
+      auth.signInWithPopup(provider);
+    };
+    this.logout = () => {
+      auth.signOut();
+    };
+  }
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      this.setState({ user });
+    });
+  }
   render() {
+    let authButton = this.state.user ? (
+      <>
+        <img
+          id="userImage"
+          src={this.state.user.photoURL}
+          height="75"
+          width="75"
+          radius="100"
+          alt="User Image"
+          onClick={this.logout}
+        />
+        <h5>{this.state.user.displayName}</h5>
+      </>
+    ) : (
+      <img
+        onClick={this.login}
+        src={require("./btn_google_signin_dark_pressed_web.png")}
+      />
+    );
+    let userInfo = this.state.user ? (
+      <>
+        <h5>Signed in using {this.state.user.displayName}</h5>{" "}
+      </>
+    ) : null;
     return (
       <div className="App">
         <Router>
@@ -83,7 +72,7 @@ class App extends Component {
             <Route exact path="/">
               <div className="App">
                 <div className="App-header">
-                  <Header />
+                  <Header info={userInfo} authButton={authButton} />
                   {/* <img src="https://picsum.photos/100" alt="Random" /> */}
                 </div>
                 <br></br>
@@ -99,6 +88,7 @@ class App extends Component {
                   src="https://picsum.photos/300/300"
                   alt="Random"
                 />
+                <br></br>
                 <Button
                   size="large"
                   variant="outlined"
@@ -113,11 +103,9 @@ class App extends Component {
                   <li>Justin Stewart</li>
                 </ul>
                 <div>
-                  <div>
-                    <div id="firebaseui-auth-container"></div>
-                  </div>
+                  <div></div>
                   <br></br>
-                  This project is <b>5</b> days old! Be sure to come back
+                  This project is <b>6</b> days old! Be sure to come back
                   tomorrow.
                 </div>
               </div>
