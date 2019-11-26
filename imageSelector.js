@@ -15,4 +15,3 @@ const randomImage = (length, width) => {
   return `https://picsum.photos/id/${randomNumber}/${length}/${width}`;
 };
 
-console.log(randomImage(500));

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.scss";
+//import * as firebase from "firebase";
 
 // ES Modules syntax
 // import Unsplash from "unsplash-js";
