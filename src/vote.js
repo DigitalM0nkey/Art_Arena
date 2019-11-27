@@ -41,6 +41,9 @@ export default function CreateVote() {
         </Button>
         <RandomImage x={200} y={200}></RandomImage>
         </div>
+        <div>
+          <RandomImage x={200} y={200}></RandomImage>
+        </div>
         <div className="option_two">
         <Button variant="contained" color="primary">
           Vote

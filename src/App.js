@@ -92,8 +92,27 @@ class App extends Component {
                 </ul>
                 <div>
                   <br></br>
-                  This project is <b>6</b> days old! Be sure to come back
-                  tomorrow.
+                  <div class="left"></div>
+                  <h3>Challenge your friends to an epic battle of art.</h3>
+                  <p className="App-intro">
+                    Each user is presented with the same random image that they all must
+                    draw. Once completed all the images will go head-to-head with one
+                    champion emerging.
+                  </p>
+                  {/* <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" /> */}
+                  {/* <CreateRoom></CreateRoom> */}
+                  <Button size="large" variant="outlined" color="secondary" href="/Arena/Lobby">
+                    go to arena
+                  </Button>
+                  <h5>Developers</h5>
+                  <ul>
+                    <li>Terrence Kuiper</li>
+                    <li>Justin Stewart</li>
+                  </ul>
+                  <div>
+                    <br></br>
+                    This project is <b>5</b> days old! Be sure to come back tomorrow.
+                  </div>
                 </div>
               </div>
             </Route>

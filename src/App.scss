@@ -109,7 +109,7 @@ html {
 .lobby_main_div, .arena_name_div, .button_div {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 // Status
@@ -117,7 +117,7 @@ html {
 .status_main_div, .player_status_div, .button_div, .gallery {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 // Vote
@@ -125,13 +125,13 @@ html {
 .vote_main_div, .vote_message, .button_div {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 .gallery {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  padding-top: 25px;
 
   .option_one, .option_two {
     display: flex;
@@ -144,12 +144,25 @@ html {
 .winner_message {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 50px;
+  padding-top: 25px;
 }
 
 .winner_gallery {
   display: flex;
   justify-content: center;
-  padding-top: 15px;
-  // flex-direction: column;
+  padding-top: 25px;
+}
+
+// Drawing
+
+.draw_main_div, #paint-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 25px;
+
+  .canvas {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
