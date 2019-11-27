@@ -2,6 +2,9 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
+const http = require("http");
+const server = http.createServer(app);
+const io = require("socket.io").listen(server);
 
 require("dotenv").config();
 
@@ -15,7 +18,8 @@ app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(process.env.PORT || 8080);
+//app.listen(process.env.PORT || 8080);
+server.listen(8080, "192.168.12.77");
 
 console.log("Listening on localhost:8080");
 
@@ -70,4 +74,13 @@ s3.upload(params, function(err, data) {
   if (data) {
     console.log("Uploaded in:", data.Location);
   }
+});
+
+// Socket Stuff
+
+io.on("connection", function(socket) {
+  socket.emit("news", { hello: "Welcome to the jungle" });
+  socket.on("my other event", function(data) {
+    console.log(data);
+  });
 });

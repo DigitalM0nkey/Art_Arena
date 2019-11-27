@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "./App.scss";
+import Moment from "react-moment";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,6 +20,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function CreateHeader(props) {
   const classes = useStyles();
+
+  var eventTime = 20999999966549200;
+  var now = moment();
+  var diffTime = eventTime - now;
+  var duration = moment.duration(diffTime * 1000, "milliseconds");
+  var interval = 1000;
+
+  setInterval(function() {
+    duration = moment.duration(duration - interval, "milliseconds");
+    "#countdown".text(
+      duration.hours() + ":" + duration.minutes() + ":" + duration.seconds()
+    );
+  }, interval);
 
   return (
     <div className={classes.root} app-header>
@@ -42,7 +56,7 @@ export default function CreateHeader(props) {
           <Paper className={classes.paper}>Room Name</Paper>
         </Grid>
         <Grid item xs={2}>
-          <Paper className={classes.paper}>Time Left: 2 min</Paper>
+          <Paper id="countdown" className={classes.paper}></Paper>
         </Grid>
         <Grid item xs={2}>
           <Button size="large" variant="outlined" color="secondary" href="/">
