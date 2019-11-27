@@ -30,7 +30,18 @@ export default function CreateStatus() {
       <div className="status_main_div">
         <Paper className={classes.root}>
           <Typography variant="h5" component="h3">
-            You have finished your drawing, currently waiting for:
+            You have finished your drawing
+          </Typography>
+        </Paper>
+      </div>
+      <div className="gallery">
+        <RandomImage x={200} y={200}></RandomImage>
+        <RandomImage x={200} y={200}></RandomImage>
+      </div>
+      <div className="status_main_div">
+        <Paper className={classes.root}>
+          <Typography variant="h5" component="h3">
+            Currently waiting for:
           </Typography>
         </Paper>
       </div>
@@ -50,10 +61,6 @@ export default function CreateStatus() {
             Player Name
           </Typography>
         </Paper>
-      </div>
-      <div className="gallery">
-        <RandomImage x={200} y={200}></RandomImage>
-        <RandomImage x={200} y={200}></RandomImage>
       </div>
       <div className="button_div">
         <Link to="/Arena/Vote">

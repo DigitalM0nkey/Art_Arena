@@ -15,6 +15,7 @@ import Drawspace from "./drawspace"
 import Status from "./status.js"
 import Vote from "./vote.js"
 import Winner from "./winner.js"
+import CreateRoom from "./createRoom.js"
 
 class App extends Component {
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
                     champion emerging.
                   </p>
                   {/* <img id="mainImage" src="https://picsum.photos/300/300" alt="Random" /> */}
+                  {/* <CreateRoom></CreateRoom> */}
                   <Button size="large" variant="outlined" color="secondary" href="/Arena/Lobby">
                     go to arena
                   </Button>
